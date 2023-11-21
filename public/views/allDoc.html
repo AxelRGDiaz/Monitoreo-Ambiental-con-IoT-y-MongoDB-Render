@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMG/low-negro-sinFondo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>Monitoreo Ambiental</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+    <script src="../JS/style.js"></script>
+    <header>
+        <div class="menu-container">
+            <div class="grt-menu-row">
+                <div class="grt-menu-logo">
+                    <a href="/" class="grt-logo">
+                        <h1> Monitoreo Ambiental </h1>
+                    </a>
+                </div>
+                <div>
+                    <div class="grt-menu-right">
+                        <nav>
+                            <button class="grt-mobile-button"><span class="line1"></span><span
+                                    class="line2"></span><span class="line3"></span></button>
+                            <ul class="grt-menu">
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/team">Team</a></li>
+                                <li class="grt-dropdown"><a>Vistas</a>
+                                    <ul class="grt-dropdown-list">
+                                        <li><a href="/maps">Maps</a></li>
+                                        <li><a href="/allDoc">All Documents</a></li>
+                                        <li><a href="/dataDB">One Document</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/wokwi">Wokwi</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <br><br>
+    <!-- Contenerdor donde se mostrara todos los documentos de la coleccion -->
+    <div class="container">
+        <div class="data-container" id="data-container">
+        </div>
+    </div>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/style.js"></script>
+</body>
+
+</html>

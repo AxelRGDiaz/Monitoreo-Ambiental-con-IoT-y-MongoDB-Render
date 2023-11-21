@@ -1,0 +1,473 @@
+/* Extra Classes */
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0bc;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../IMG/low-blanco-sinFondo.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+
+h1{
+	color: #FFF;
+	font-weight: bold;
+}
+a{
+	text-decoration: none;
+}
+
+
+/* Menu */
+header {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	width:100%;
+	background:#000000;
+	height:60px;
+	z-index:9999;
+	text-align: center;
+}
+
+header.scrolled {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 0px;
+}
+
+header nav {
+	clear:both;
+	display: block;
+	line-height: 60px;
+	height:60px;
+	position:relative;
+}
+
+.menu-container {
+	padding-left:30px;
+	padding-right:30px;
+}
+
+.grt-menu-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+a.grt-logo {
+	display:inline-block;
+	text-decoration: none;
+}
+
+a.grt-logo h1 {
+	max-height: 60px;
+    width: auto;
+	size: 100px;
+	text-decoration: none;
+}
+
+.grt-mobile-button {
+	display:none;
+}
+
+.grt-mobile-button:focus {
+	border:0;
+	outline:0;
+}
+
+.body-overflow {
+	overflow:hidden;
+}
+
+ul.grt-menu {
+	display: block;
+	float:right;
+	margin:0 -10px 0 0;
+	padding:0;
+	list-style-type: none;
+}
+
+ul.grt-menu:after {
+	content:"";
+	clear:both;
+	display:block;
+}
+
+ul.grt-menu li {
+	display: inline-block;
+	margin:0;
+	padding:0;
+	-webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+}
+
+ul.grt-menu li a {
+	padding: 5px 12px;
+	font-size:21px;
+	display: inline-block;
+	color:#ffffff;
+	line-height: 1.1em;
+	box-shadow: inset 0 0 0 0 #FFF;
+	-webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+	position:relative;
+	text-decoration: none;
+}
+.grt-menu-row h1 {
+    margin-top: 10px; /* Puedes ajustar este valor según sea necesario */
+}
+
+ul.grt-menu li.active a:after  {
+    position: absolute;
+    bottom: 1px;
+    content: "";
+    left: 12px;
+    right: 12px;
+    border-bottom: 2px solid #000000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+ul.grt-menu li.grt-dropdown:hover {
+	cursor:pointer;
+}
+
+ul.grt-menu li.grt-dropdown:hover a {
+	box-shadow: none;
+}
+
+ul.grt-menu li.grt-dropdown ul.grt-dropdown-list {
+	display:none;
+	position:absolute;
+	background:#000000;
+	margin: 0;
+	padding: 0;
+	min-width:150px;
+	animation: fadeIn 0.8s;
+	z-index: 999;
+}
+
+ul.grt-menu li.grt-dropdown ul.grt-dropdown-list li a {
+	display:block;
+	font-size:18px;
+	color: #ffffff;
+	-webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 0.8s;
+	padding: 9px 12px;
+}
+
+ul.grt-menu li.grt-dropdown ul.grt-dropdown-list li:last-child a {
+	padding-bottom:15px;
+}
+
+ul.grt-menu li.grt-dropdown.active-dropdown {
+	background: #ffffff;
+}
+
+ul.grt-menu li.grt-dropdown.active-dropdown ul.grt-dropdown-list {
+	display:block !important;
+}
+
+ul.grt-menu li.grt-dropdown.active-dropdown a {
+	color:#000000;
+}
+
+
+/* Desktop only style */
+@media (min-width:768px) {
+
+	ul.grt-menu li.grt-dropdown:hover > a + ul.grt-dropdown-list {
+		display:block;
+		top: calc(100% - 17px);
+	}
+
+	ul.grt-menu li.grt-dropdown ul.grt-dropdown-list li {
+		display:block;
+	}
+
+	ul.grt-menu li.grt-dropdown:hover > a {
+		color:#000000;
+		box-shadow: inset 150px 0 0 0 #ffffff;
+	}
+
+	ul.grt-menu li a:hover {
+		color:#000000;
+		box-shadow: inset 150px 0 0 0 #ffffff;
+	}
+}
+
+/* Tablet only style */
+@media (min-width:768px) and (max-width:991px) {
+	ul.grt-menu li a {
+		font-size:18px;
+	}
+}
+
+/* Mobile only style */
+@media (max-width:767px) {
+
+	.menu-container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.grt-mobile-button {
+		display:inline-block;
+		position:absolute;
+		right:0;
+		top:10px;
+		background:#000000;
+		color:#000000;
+		margin:0;
+		padding:0;
+		cursor:pointer;
+		border: 0;
+		width:35px;
+	}
+
+	.grt-mobile-button .line1, .grt-mobile-button .line2, .grt-mobile-button .line3 {
+		width: 35px;
+		height: 4px;
+		background-color: #ffffff;
+		margin: 6px 0;
+		transition: 0.4s;
+		display:block;
+	}
+
+	ul.grt-menu {
+		display:none;
+		margin:0;
+  		height: 0;
+	}  
+
+	ul.open-grt-menu {
+		position: fixed;
+		background: #000000;
+		width: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		height:100%;
+		float: none;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.grt-mobile-button-open {
+		position: fixed;
+		z-index:99999;
+		right:25px;
+		top:25px;
+	}
+
+	.grt-mobile-button-open .line1 {
+		-webkit-transform: rotate(-45deg) translate(-8px, 5px);
+		transform: rotate(-45deg) translate(-8px, 5px);
+	}
+
+	.grt-mobile-button-open .line2 {opacity: 0;}
+	
+	.grt-mobile-button-open .line3 {
+		-webkit-transform: rotate(45deg) translate(-8px, -7px);
+		transform: rotate(45deg) translate(-8px, -7px);
+	}
+
+	ul.grt-menu li {
+		display: block;
+		line-height: 3.5em;
+	}
+
+	ul.grt-menu li a {
+		padding: 6px 10px;
+		font-size:30px;
+	}
+
+	ul.grt-menu li.grt-dropdown ul.grt-dropdown-list {
+		width:100%;
+		position: relative;
+		display:none;
+	}
+
+	ul.grt-menu li.grt-dropdown ul.grt-dropdown-list li a {
+		display: block;
+		font-size: 17px;
+	}
+}
+#map {
+	height: 600px;
+	width: 100%;
+	max-width: 1000px;
+    margin: 20px auto;
+	margin-top: 60px; /* Ajusta este valor según sea necesario */
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top: 60px; /* Ajusta este valor según sea necesario */
+}
+iframe{
+	height: 700px;
+	width: 1200px;
+	
+	margin-top: 60px; /* Ajusta este valor según sea necesario */
+
+}
+
+.data-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.data-item h2 {
+    margin: 0;
+}
+
+.data-item p {
+    margin: 5px 0;
+}
+
+.temperature-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    position: relative;
+    margin: 10px 0;
+}
+
+.temperature-bar.high-temperature {
+    background-color: #ff0000;
+}
+
+.temperature-bar.low-temperature {
+    background-color: #3498db;
+}
+
+.temperature-level {
+    height: 100%;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    position: relative;
+    transition: width 0.5s;
+}
+
+/* Media query para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .data-item {
+        margin: 5px 0;
+    }
+	.img-box {
+		margin-top: 0px;
+		margin-right: 30px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+	  }
+}
+
+.outer-container {
+    justify-content: center;
+    padding: 0 5%; /* Ajusta los márgenes laterales según sea necesario */
+   
+}
+
+.section-head {
+    font-size: 60px;
+    line-height: 70px;
+    color:#000000; /* Cambia 'yourHeadColor' al color que desees */
+    margin-bottom: 24px;
+}
+
+.section-body {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000; /* Cambia 'yourBodyColor' al color que desees */
+    margin-bottom: 64px;
+}
+
+.card {
+    background-color: #ffffff; /* Cambia 'yourCardColor' al color que desees */
+    display: flex;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 6px 12px 24px;
+    flex-direction: row;
+    border-radius: 15px;
+}
+
+.person-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000; /* Cambia 'yourNameColor' al color que desees */
+    margin-bottom: 5px;
+}
+
+.person-info {
+    font-size: 11px;
+    /* line-height: 15px; */
+    color: #000000; /* Cambia 'yourInfoColor' al color que desees */
+}
+
+.person-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+.img-box {
+	max-width: 109px;
+	max-height: 109px;
+  }
+  .img-box {
+    max-width: 130px;
+    max-height: 130px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 0px;
+    margin-right: 25px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }

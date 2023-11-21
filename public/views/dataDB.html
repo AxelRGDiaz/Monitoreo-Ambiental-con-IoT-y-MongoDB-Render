@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="icon" href="../IMG/low-negro-sinFondo.png" type="image/x-icon">
+  <title>Monitoreo Ambiental</title>
+</head>
+
+<body>
+  <script src="../JS/style.js"></script>
+  <header>
+    <div class="menu-container">
+      <div class="grt-menu-row">
+        <div class="grt-menu-logo">
+          <a href="/" class="grt-logo">
+            <h1> Monitoreo Ambiental </h1>
+          </a>
+        </div>
+        <div class="grt-menu-right">
+          <nav>
+            <button class="grt-mobile-button"><span class="line1"></span><span class="line2"></span><span
+                class="line3"></span></button>
+            <ul class="grt-menu">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/team">Team</a></li>
+              <li class="grt-dropdown"><a>Vistas</a>
+                <ul class="grt-dropdown-list">
+                  <li><a href="/maps">Maps</a></li>
+                  <li><a href="/allDoc">All Documents</a></li>
+                  <li><a href="/dataDB">One Document</a></li>
+                </ul>
+              </li>
+              <li><a href="/wokwi">Wokwi</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <br><br>
+  <!-- Contenedor donde se mostrara el documento mas reciente de la coleccion  -->
+  <div class="container" id="data-container">
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../Js/getData.js"></script>
+  <script src="../Js/style.js"></script>
+</body>
+
+</html>

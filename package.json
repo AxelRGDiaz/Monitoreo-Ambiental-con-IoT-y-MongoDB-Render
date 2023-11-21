@@ -1,0 +1,24 @@
+{
+  "name": "final-proyect",
+  "version": "1.0.0",
+  "description": "Este proyecto combina IoT y MongoDB para monitorear el entorno. Sensores conectados a un ESP32 generan datos que, a través de MQTT y WiFi, llegan al middleware. Los documentos JSON resultantes se almacenan en MongoDB, actualizando en tiempo real una interfaz de usuario, ofreciendo un monitoreo ambiental inteligente y dinámico.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1",
+    "mqtt": "^5.3.0",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
+  }
+}
